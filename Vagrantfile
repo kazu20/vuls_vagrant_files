@@ -85,6 +85,7 @@ Vagrant.configure("2") do |config|
      git clone https://github.com/kotakanbe/go-cve-dictionary.git
      cd go-cve-dictionary
      make install
+     for i in `seq 2002 $(date +"%Y")`; do go-cve-dictionary fetchnvd -years $i; done
    
      # vuls install 
      mkdir -p $GOPATH/src/github.com/future-architect
@@ -92,5 +93,6 @@ Vagrant.configure("2") do |config|
      git clone https://github.com/future-architect/vuls.git
      cd vuls
      make install
+     cp /vagrant/config.toml /root/
    SHELL
 end
