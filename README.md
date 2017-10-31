@@ -1,1 +1,1 @@
-vuls_vagrantfile
+centos7にvulsをインストールするVagrantfileです。
